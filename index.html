@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TDC & O'Kane Tool</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="header">
+    <h1>WWII Torpedo Tool</h1>
+    <select id="modeSelect" onchange="switchMode()">
+      <option value="tdc">TDC Mode (C/37 - S3)</option>
+      <option value="okane">Dick O'Kane Method</option>
+    </select>
+  </div>
+
+  <div id="tdcMode" class="panel">
+    <h2>German TDC Simulator</h2>
+    <div class="dial-group">
+      <label>Target Speed (knots)</label>
+      <input type="range" min="0" max="30" value="10" id="tdc_target_speed">
+      <span id="tdc_target_speed_val">10</span>
+    </div>
+    <div class="dial-group">
+      <label>Torpedo Speed (knots)</label>
+      <input type="range" min="20" max="50" value="30" id="tdc_torpedo_speed">
+      <span id="tdc_torpedo_speed_val">30</span>
+    </div>
+    <div class="dial-group">
+      <label>Own Heading</label>
+      <input type="range" min="0" max="359" value="0" id="tdc_own_heading">
+      <span id="tdc_own_heading_val">0°</span>
+    </div>
+    <div class="dial-group">
+      <label>Target Course</label>
+      <input type="range" min="0" max="359" value="90" id="tdc_target_course">
+      <span id="tdc_target_course_val">90°</span>
+    </div>
+    <button onclick="calcTDC()">Calculate Gyro Angle</button>
+    <div id="tdc_output" class="output"></div>
+  </div>
+
+  <div id="okaneMode" class="panel" style="display:none">
+    <h2>Dick O'Kane Method</h2>
+    <label>Target Speed</label>
+    <input type="number" id="okane_target_speed" value="10">
+    <label>Torpedo Speed</label>
+    <input type="number" id="okane_torpedo_speed" value="30">
+    <label>Own Heading</label>
+    <input type="number" id="okane_heading" value="0">
+    <label>Target Passing Side</label>
+    <select id="okane_side">
+      <option value="left">Left</option>
+      <option value="right">Right</option>
+    </select>
+    <button onclick="calcOkane()">Calculate Target Bearing</button>
+    <div id="okane_output" class="output"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

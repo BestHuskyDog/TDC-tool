@@ -1,0 +1,31 @@
+body {
+  background-color: #101010;
+  color: #ddd;
+  font-family: monospace;
+  padding: 20px;
+}
+.header {
+  text-align: center;
+}
+select, input, button {
+  font-size: 1em;
+  margin: 5px 0;
+  padding: 5px;
+  width: 100%;
+  max-width: 300px;
+}
+.panel {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background-color: #222;
+}
+.dial-group {
+  margin-bottom: 15px;
+}
+.output {
+  margin-top: 15px;
+  font-size: 1.2em;
+  color: #7fffd4;
+}
